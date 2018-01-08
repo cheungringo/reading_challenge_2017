@@ -6,13 +6,10 @@ Created on Sat Jan  6 20:54:03 2018
 """
 padding = 0.05
 from math import pi, sqrt
-from helpers import partition_books_by_month, black_rgba, get_credentials, \
+from helpers import partition_books_by_month, black_rgba, \
     fic_color_rgba, nonfic_color_rgba, get_color_fic, build_info
 import plotly
 import plotly.graph_objs as go
-
-creds = get_credentials("creds.json")
-plotly.tools.set_credentials_file(username=creds[0], api_key=creds[1])
 
 def timeline(books):
     '''
@@ -135,6 +132,12 @@ def build_layout():
         showticklabels=False
     )
     return go.Layout(
+        title='Reading Timeline 2017',
+        titlefont=dict(
+            family='Open Sans, monospace',
+            size=14,
+            color='rgba(255, 255, 255, 0)',
+        ),
         yaxis=axis,
         xaxis=axis,
         width=1000,

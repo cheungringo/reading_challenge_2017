@@ -5,13 +5,9 @@ Created on Sat Jan  6 20:55:23 2018
 @author: Ringo
 """
 import random
-from helpers import is_fiction, get_credentials, white_rgba, \
-    partition_books_by_genre
+from helpers import is_fiction, white_rgba, partition_books_by_genre
 import plotly
 import plotly.graph_objs as go
-
-creds = get_credentials("creds.json")
-plotly.tools.set_credentials_file(username=creds[0], api_key=creds[1])
 
 def double_donut(books):
     '''

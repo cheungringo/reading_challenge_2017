@@ -6,6 +6,10 @@ Created on Sat Jan  6 20:56:41 2018
 """
 import json
 
+def get_credentials(file_name):
+    creds = json.load(open(file_name))
+    return (creds["username"], creds["api_key"])
+
 # BEGIN: color functions 
 
 def black_rgba():
@@ -34,10 +38,6 @@ def get_color_fic(genre):
     except ValueError:
         # TODO: pick an error color
         pass
-
-def get_credentials(file_name):
-    creds = json.load(open(file_name))
-    return (creds["username"], creds["api_key"])
 
 # END: color functions
 

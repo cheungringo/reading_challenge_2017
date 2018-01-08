@@ -1,8 +1,12 @@
 from rw import read_books_from_file
 from timeline import timeline
 from donut import double_donut
-from helpers import hours_spent_reading
+from helpers import hours_spent_reading, get_credentials
 from arrow import arrow
+import plotly
+
+creds = get_credentials("creds.json")
+plotly.tools.set_credentials_file(username=creds[0], api_key=creds[1])
 
 def main():
     '''
